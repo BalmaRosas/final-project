@@ -1,8 +1,11 @@
 <template>
   <div>Sign In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Time to build up the Final Project!</p>
-  <p class="wu-text">Wu Tang Forever</p>
+  <form @click.prevent="signIn">
+    <input type="text" v-model="email">
+    <input type="password" v-model="password">
+    <input type="submit">
+  </form>
 </template>
 
 <script setup>
@@ -25,10 +28,11 @@ const password = ref("");
 const errorMsg = ref("");
 
 //Show hide password variables
+const hidePassword = ref(true);
+
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
-const hidePassword = ref(true);
 
 // Router to push user once SignedIn to the HomeView
 const redirect = useRouter();
@@ -39,7 +43,7 @@ const signIn = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path: "/" });
+    redirect.push({ path: "/auth" });
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;
