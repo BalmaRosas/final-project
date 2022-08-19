@@ -2,8 +2,9 @@
   <div>Sign In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <form @click.prevent="signIn">
-    <input type="text" v-model="email">
-    <input type="password" v-model="password">
+    <label>Write your e-mail</label>
+    <input type="text" placeholder="e-mail" v-model="email">
+    <input type="password" placeholder="password" v-model="password">
     <input type="submit">
   </form>
 </template>
@@ -43,7 +44,7 @@ const signIn = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path: "/auth" });
+    redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;

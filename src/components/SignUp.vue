@@ -2,14 +2,15 @@
   <div>Sign Up</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <form @click.prevent="SignUp">
-    <input type="text" v-model="email">
-    <input type="password" v-model="password">
-    <input type="password" v-model="password">
+    <input type="text" placeholder="e-mail" v-model="email">
+    <input type="password" placeholder="password" v-model="password">
+    <input type="password" placeholder="confirm password" v-model="password">
     <input type="submit">
   </form>
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
@@ -46,7 +47,7 @@ const SignUp = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path: "/" });
+    redirect.push({ path: "/auth" });
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;
