@@ -1,8 +1,20 @@
 <template>
-  <div>home</div>
+<div>
+
+<Nav />
+<h1>Eso deberia aparecer</h1>
+<h2>hello MotoMami</h2>
+
+</div>
+
 </template>
 
-<script setup></script>
+<script setup>
+import Nav from '../components/Nav.vue';
+
+</script>
+
+
 
 <style></style>
 

@@ -20,6 +20,11 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
+    async signOut() {
+      const { error } = await supabase.auth.signOut();
+     if (error) throw error;
+    },
+
     async signIn(email, password) {
       const { user, error } = await supabase.auth.signUp({
         email: email,
@@ -35,14 +40,15 @@ export const useUserStore = defineStore("user", {
       }
     },
     // this makes that user's info is remembered in the inputs
-    persist: {
-      enabled: true,
-      strategies: [
-        {
-          key: 'user',
-          storage: localStorage
-        }
-      ]
-    },
+  
+  },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: 'user',
+        storage: localStorage
+      }
+    ]
   },
 });

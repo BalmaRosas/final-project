@@ -53,8 +53,8 @@ npm run build
 ### DAY 2 - August 19th
 > link database with forms for users to register
 
-> finish sign up page
+> create Nav component with logout
 
-> finish sign in page
+> finish logout logic
 
 
