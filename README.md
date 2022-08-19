@@ -45,12 +45,16 @@ npm run build
 
 ### DAY 1 - August 18th
 > review steps to take & structure
+
 > create database for users & tasks in SupaBase
+
 > start sign in & sign up forms logic
 
 ### DAY 2 - August 19th
 > link database with forms for users to register
+
 > finish sign up page
+
 > finish sign in page
 
 
