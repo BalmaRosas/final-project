@@ -24,12 +24,25 @@ export const useUserStore = defineStore("user", {
       const { user, error } = await supabase.auth.signUp({
         email: email,
         password: password,
+      },
+      {
+        shouldCreateUser: false
       });
       if (error) throw error;
       if (user) {
         this.user = user;
         console.log(this.user);
       }
+    },
+    // this makes that user's info is remembered in the inputs
+    persist: {
+      enabled: true,
+      strategies: [
+        {
+          key: 'user',
+          storage: localStorage
+        }
+      ]
     },
   },
 });

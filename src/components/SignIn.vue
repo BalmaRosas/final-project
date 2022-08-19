@@ -1,12 +1,13 @@
 <template>
   <div>Sign In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form @click.prevent="signIn">
+  <form @submit.prevent="signIn">
     <label>Write your e-mail</label>
-    <input type="text" placeholder="e-mail" v-model="email">
-    <input type="password" placeholder="password" v-model="password">
+    <input type="text" placeholder="e-mail" v-model="email" required>
+    <input type="password" placeholder="password" v-model="password" required>
     <input type="submit">
   </form>
+  <p v-show="errorMsg">{{ errorMsg }}</p>
 </template>
 
 <script setup>
@@ -47,7 +48,7 @@ const signIn = async () => {
     redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
-    errorMsg.value = `Error: ${error.message}`;
+    errorMsg.value = error.message;
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
