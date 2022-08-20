@@ -57,4 +57,8 @@ npm run build
 
 > finish logout logic
 
+### DAY 3 - August xxx
+> login styling
+
+> signup styling
 

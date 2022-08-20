@@ -39,9 +39,8 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
-    // this makes that user's info is remembered in the inputs
-  
   },
+  // this keeps the user logged in 
   persist: {
     enabled: true,
     strategies: [

@@ -1,14 +1,23 @@
 <template>
-  <div>Sign In</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form @submit.prevent="signIn">
-    <label>Write your e-mail</label>
+  
+  <div class="form-container">
+    <div class="title-container">
+      <img src="" alt="Remind logo">
+      <h1>Log In to Remind!</h1>
+      <h3>The cutest to do app you'll find</h3>
+    </div>
+    <form @submit.prevent="signIn">
     <p>balma.rosas@gmail.com</p>
-    <input type="text" placeholder="e-mail" v-model="email" required>
-    <input type="password" placeholder="password" v-model="password" required>
-    <input type="submit">
-  </form>
-  <p v-show="errorMsg">{{ errorMsg }}</p>
+    <input type="text" placeholder="write your e-mail" v-model="email" required>
+    <input type="password" placeholder="write your password" v-model="password" required>
+    <input type="submit" id="submit-button">
+    </form>
+    <div class="bassline-container">
+      <!-- <p>Don't have an account yet?</p> -->
+      <span>Don't have an account yet? </span><PersonalRouter :route="route" :buttonText="buttonText" />
+      <p v-show="errorMsg">{{ errorMsg }}</p>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -21,7 +30,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
+const buttonText = "Sign Up for free";
 
 // Input Fields
 const email = ref("");
@@ -59,27 +68,49 @@ const signIn = async () => {
 </script>
 
 <style>
-.wu-text {
-  color: black;
+body {
+  background-color: rgb(200, 187, 239);
+  margin: 0px;
 }
 
-.form {
+.form-container {
+  background-color: white;
+  /* padding: 4rem;
+  max-width: 1000px; */
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  align-items: center;
+  padding: 3rem 5rem;
+  border-radius: 3%;
 }
-.input {
-  color: black;
-  margin-bottom: 1rem;
-}
-.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px;
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30vh;
+  width: 50vw;
+  max-width: 350px;
+}
+
+#submit-button {
+  background-color: rgb(99, 59, 136);
+  color: white;
+  /* border-radius: 7%; */
+  height: 2rem;
+}
+
+/* .bassline-container {
+  display: flex;
+  flex-direction: row;
+  
+} */
+
 </style>
