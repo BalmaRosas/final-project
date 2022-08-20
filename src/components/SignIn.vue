@@ -2,20 +2,20 @@
   
   <div class="form-container">
     <div class="title-container">
-      <img src="" alt="Remind logo">
+      <img id="logo" src="/images/logo.png" alt="Remind logo">
       <h1>Log In to Remind!</h1>
-      <h3>The cutest to do app you'll find</h3>
+      <h3>The cutest to-do app you will find</h3>
     </div>
     <form @submit.prevent="signIn">
-    <p>balma.rosas@gmail.com</p>
-    <input type="text" placeholder="write your e-mail" v-model="email" required>
-    <input type="password" placeholder="write your password" v-model="password" required>
-    <input type="submit" id="submit-button">
+    <input type="text" placeholder="write your e-mail" v-model="email" required id="input-field">
+    <input type="password" placeholder="write your password" v-model="password" required id="input-field">
+    <input value="Log in" type="submit" id="submit-button">
     </form>
     <div class="bassline-container">
       <!-- <p>Don't have an account yet?</p> -->
-      <span>Don't have an account yet? </span><PersonalRouter :route="route" :buttonText="buttonText" />
+      <span>Don't have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
       <p v-show="errorMsg">{{ errorMsg }}</p>
+      <p>balma.rosas@gmail.com</p>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Sign Up for free";
+const buttonText = "Sign up";
 
 // Input Fields
 const email = ref("");
@@ -68,20 +68,17 @@ const signIn = async () => {
 </script>
 
 <style>
-body {
-  background-color: rgb(200, 187, 239);
-  margin: 0px;
-}
+
 
 .form-container {
-  background-color: white;
-  /* padding: 4rem;
-  max-width: 1000px; */
+  background-color: #fdfaf5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 5rem;
+  padding: 1rem 1rem;
   border-radius: 3%;
+
+  /* position: relative; */
 }
 
 .title-container {
@@ -90,27 +87,64 @@ body {
   align-items: center;
   text-align: center;
 }
+#logo {
+  height: 40px;
+  margin-top: 1rem;
+}
+
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: rgb(44, 44, 44);
+}
+
+h3 {
+  margin-top: 0px;
+  font-weight: 500;
+  color: rgb(98, 98, 98);
+}
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 30vh;
+  height: 40vh;
   width: 50vw;
   max-width: 350px;
 }
 
-#submit-button {
-  background-color: rgb(99, 59, 136);
-  color: white;
-  /* border-radius: 7%; */
-  height: 2rem;
+#input-field {
+  /* border: 0px; */
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  /* border-bottom-style: groove; */
+  border-color: rgb(79, 79, 79);;
+  background-color: #fdfaf5;
+  font-weight: 400;
+  color:  rgb(98, 98, 98);
 }
 
-/* .bassline-container {
-  display: flex;
-  flex-direction: row;
-  
-} */
+#submit-button {
+  background-color: #9fae87;
+  color: white;
+  border: 0px;
+  /* border-radius: 7%; */
+  height: 3rem;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 21px;
+}
+
+.bassline-container {
+ text-align: center;
+ margin-top: 1rem;
+}
+
+span {
+  color: rgb(44, 44, 44);
+}
 
 </style>

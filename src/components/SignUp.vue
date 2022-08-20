@@ -2,7 +2,6 @@
   <div>Sign Up</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
   <form @submit.prevent="SignUp">
-    <label>Write your e-mail</label>
     <input type="text" placeholder="rite your e-mail" v-model="email" required>
     <input type="password" placeholder="write your password" v-model="password" required>
     <input type="password" placeholder="verify your password" v-model="confirmPassword" required>
