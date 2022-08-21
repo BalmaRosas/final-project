@@ -10,12 +10,14 @@
 body {
   /* background-color: rgb(200, 187, 239); */
   margin: 0px;
-  background-image: url(../images/background4.jpg);
+  background-image: url(../images/background5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* position: absolute; */
+  height: 100vh;
+  position: relative;
 }
+
 #image-div {
   /* width: 100vw;
   height: 100vh; */

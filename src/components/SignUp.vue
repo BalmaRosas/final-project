@@ -1,13 +1,21 @@
 <template>
-  <div>Sign Up</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form @submit.prevent="SignUp">
-    <input type="text" placeholder="rite your e-mail" v-model="email" required>
-    <input type="password" placeholder="write your password" v-model="password" required>
-    <input type="password" placeholder="verify your password" v-model="confirmPassword" required>
-    <input type="submit">
-  </form>
-  <h2 v-show="errorMsg">{{ errorMsg }}</h2>
+  <div class="form-container">
+   <div class="title-container">
+      <img id="logo" src="/images/logo.png" alt="Remind logo">
+      <h1>Sign up in Remind!</h1>
+      <h3>The cutest to-do app you will find</h3>
+    </div>
+    <form @submit.prevent="SignUp">
+      <input type="text" placeholder="write your e-mail" v-model="email" required class="input-field">
+      <input type="password" placeholder="pick a password" v-model="password" required class="input-field">
+      <input type="password" placeholder="confirm your password" v-model="confirmPassword" required class="input-field">
+      <input value="Create account" type="submit" class="submit-button">
+    </form>
+    <div class="bassline-container">
+      <span>Already have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
+      <p v-show="errorMsg">{{ errorMsg }}</p>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -20,7 +28,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/login";
-const buttonText = "Test the Sign In Route";
+const buttonText = "Sign in";
 
 
 

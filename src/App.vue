@@ -34,6 +34,11 @@ onMounted(async () => {
 </script>
 
 <style>
+
+body {
+  margin: 0px;
+}
+
 * {
   font-family: 'Rubik', sans-serif;
 }

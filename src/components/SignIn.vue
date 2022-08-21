@@ -2,17 +2,20 @@
   
   <div class="form-container">
     <div class="title-container">
+      
       <img id="logo" src="/images/logo.png" alt="Remind logo">
       <h1>Log In to Remind!</h1>
       <h3>The cutest to-do app you will find</h3>
     </div>
     <form @submit.prevent="signIn">
-    <input type="text" placeholder="write your e-mail" v-model="email" required id="input-field">
-    <input type="password" placeholder="write your password" v-model="password" required id="input-field">
-    <input value="Log in" type="submit" id="submit-button">
+      <!-- <div class="input-line"> -->
+        <i class="material-icons">email</i>
+        <input type="text" placeholder="write your e-mail" v-model="email" required class="input-field" >
+      <!-- </div>  -->
+      <input type="password" placeholder="write your password" v-model="password" required class="input-field">
+      <input value="Log in" type="submit" class="submit-button">
     </form>
     <div class="bassline-container">
-      <!-- <p>Don't have an account yet?</p> -->
       <span>Don't have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
       <p v-show="errorMsg">{{ errorMsg }}</p>
       <p>balma.rosas@gmail.com</p>
@@ -69,16 +72,19 @@ const signIn = async () => {
 
 <style>
 
-
 .form-container {
   background-color: #fdfaf5;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 1rem;
+  height: 75vh;
   border-radius: 3%;
-
-  /* position: relative; */
+  position: absolute;
+  top: 10vh;
+  left: 20vw;
+  right: 20vw;
+  bottom: 10vh;
 }
 
 .title-container {
@@ -109,24 +115,34 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 40vh;
-  width: 50vw;
+  height: 37vh;
+  width: 100%;
   max-width: 350px;
 }
 
-#input-field {
+/* .input-line {
+  display: flex;
+  flex-direction: row;
+} */
+
+.material-icons {
+  color: rgb(98, 98, 98);
+  
+}
+
+.input-field {
   /* border: 0px; */
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
-  /* border-bottom-style: groove; */
-  border-color: rgb(79, 79, 79);;
+  border-color: rgb(98, 98, 98);
   background-color: #fdfaf5;
+  font-size: 16px;
   font-weight: 400;
-  color:  rgb(98, 98, 98);
+
 }
 
-#submit-button {
+.submit-button {
   background-color: #9fae87;
   color: white;
   border: 0px;
@@ -145,6 +161,7 @@ form {
 
 span {
   color: rgb(44, 44, 44);
+  
 }
 
 </style>
