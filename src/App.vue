@@ -43,6 +43,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  color: blue;
 }
 
   
