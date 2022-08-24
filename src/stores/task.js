@@ -41,13 +41,15 @@ export const useTaskStore = defineStore("tasks", {
       });
     },
 
-    async editTask(title, id) {
+    async editTask(newTitle, newDescription, id) {
       //va a supabase para acceder a la información
       const {data, error} = await supabase
        // de la tabla "tasks"
       .from("tasks")
       //actualiza el título(1r ttile) por el nuevo título(2ºtitle) 
-      .update({title: title})
+      .update([{
+        title: newTitle,
+        description: newDescription,}])
       //del objeto que tenga el mismo id(1º) en la base de datos que el id(2º) que le pasamos con el emit
       .match({
         id: id

@@ -8,7 +8,8 @@
 <TaskItem v-for="(task1, index) in infoUseTaskStore.tasks" :key="index" 
 :task2="task1"
 @deleteTask="deleteTask"
-@toggleTask="toggleTask"/>
+@toggleTask="toggleTask"
+@editTask="editTask"/>
 </div>
 
 </template>
@@ -39,7 +40,19 @@ async function deleteTask(id){
 async function toggleTask(id, completed){
      await infoUseTaskStore.toggleTask(id, completed);
      infoUseTaskStore.fetchTasks(); 
-}
+};
+
+
+const editFormValue = () => {
+  editForm.value = !editForm.value;};
+
+async function editTask(newTitle, newDescription, id) {
+    await infoUseTaskStore.editTask(id, newTitle, newDescription);
+    infoUseTaskStore.fetchTasks(); 
+    editFormValue();
+};
+
+
 
 </script>
 

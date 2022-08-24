@@ -1,26 +1,35 @@
 <template>
-  <div>
+  <div v-if="editForm == false" class="card-container">
     <h2>{{ task2.title }}</h2>
     <p>{{ task2.description }}</p>
     <button @click="emit('deleteTask', task2.id);" class="task-button delete">Delete</button>
-    <button @click="emit('editTask', task2.id, task2.title, task2.description)" class="task-button edit">Edit</button>
+    <button @click="emit('editFormValue');" class="task-button edit">Edit</button>
     <button @click="toggleTask" 
     class="task-button" :class="task2.is_complete ? 'done' : 'not-done'"
     >Done</button>
   </div>
-  <!-- :class="task2.is_complete ? 'done' : 'not-done'"  -->
+
+  <div v-if="editForm == true" class="card-container">
+    <input type="text" 
+    placeholder="write your new title"
+    v-model="newTitle">
+     <input type="text" 
+    placeholder="write your new description"
+    v-model="newDescription">
+    <button @click="emit('editTask', task2.id, task2.title, task2.description)" class="task-button edit">Confirm</button>
+    
+  </div>
+  
 </template>
 
 <script setup>
 import { ref } from "@vue/reactivity";
+//import func from "../../vue-temp/vue-editor-bridge";
 
-const emit = defineEmits(["deleteTask", "toggleTask", "editTask"]);
+const emit = defineEmits(["deleteTask", "toggleTask", "editTask", "editFormValue"]);
 
 //const props = defineProps(["ENTER-PROP-HERE"]);
 const props = defineProps({ task2: Object });
-
-//constante que guarda el valor por defecto de "done" que es una clase dinámica que le he pasado al button
- //const done = ref(false)
 
 //como el @click no funciona bien con + de 1 evento, ponemos los 2 eventos (la función que cambiara el valor de is-complete y la clase de done) en una constante 2 en 1
 const toggleTask = () => {
@@ -28,9 +37,27 @@ const toggleTask = () => {
   emit('toggleTask', props.task2.id, props.task2.is_complete);
 }
 
+// constante que define el valor por defecto del div
+const editForm = ref(false);
+const newTitle = ref("");
+const newDescription = ref("");
+
+// const editFormValue = () => {
+//   editForm.value = !editForm.value;}
+
+
+
 </script>
 
 <style>
+.card-container {
+  background-color: #fdfaf5;
+  height: 150px;
+  width: 150px;
+  padding: 3rem;
+  margin: 2rem;
+}
+
 .task-button {
   color: white;
   border: 0px;
