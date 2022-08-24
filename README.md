@@ -57,8 +57,26 @@ npm run build
 
 > finish logout logic
 
-### DAY 3 - August xxx
+### DAY 3 - August 21
 > login styling
 
 > signup styling
 
+### DAY 4 - August 22
+> create home template
+
+> create new task form
+
+> send new task to supabase
+
+### DAY 5 - August 23
+> finish sending new task to supabase
+
+> bring existing taks form supabase
+
+> delete tasks
+
+### DAY 6 - August 23
+> edit tasks
+
+> mark tasks as completed (toggle)

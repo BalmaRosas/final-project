@@ -6,10 +6,10 @@
       <h3>The cutest to-do app you will find</h3>
     </div>
     <form @submit.prevent="SignUp">
-      <input type="text" placeholder="write your e-mail" v-model="email" required class="input-field">
+      <input type="email" placeholder="write your e-mail" v-model="email" required class="input-field">
       <input type="password" placeholder="pick a password" v-model="password" required class="input-field">
       <input type="password" placeholder="confirm your password" v-model="confirmPassword" required class="input-field">
-      <input value="Create account" type="submit" class="submit-button">
+      <button type="submit" class="submit-button">Create account</button>
     </form>
     <div class="bassline-container">
       <span>Already have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
@@ -58,7 +58,7 @@ const SignUp = async () => {
   if(password.value === confirmPassword.value) {
     try {
       // calls the user store and send the users info to backend to logIn
-      await useUserStore().signIn(email.value, password.value);
+      await useUserStore().signUp(email.value, password.value);
       // redirects user to the homeView
       redirect.push({ path: "/auth/login" });
     } catch (error) {

@@ -2,15 +2,44 @@
 <div>
 
 <Nav />
-<h1>Eso deberia aparecer</h1>
-<h2>hello MotoMami</h2>
 
+<NewTask @addingTask="addingTaskHome"/>
+<!-- <AllTasks/> -->
+<TaskItem v-for="(task1, index) in infoUseTaskStore.tasks" :key="index" 
+:task2="task1"
+@deleteTask="deleteTask"
+@toggleTask="toggleTask"/>
 </div>
 
 </template>
 
 <script setup>
 import Nav from '../components/Nav.vue';
+import NewTask from '../components/NewTask.vue';
+import TaskItem from '../components/TaskItem.vue';
+import { useTaskStore } from "../stores/task";
+
+const infoUseTaskStore = useTaskStore();
+
+infoUseTaskStore.fetchTasks();
+
+async function addingTaskHome(task){
+    console.log('intento crear: ', task.title, task.description);
+    await infoUseTaskStore.addTask(task.title, task.description);
+    infoUseTaskStore.fetchTasks();
+};
+
+async function deleteTask(id){
+    // console.log(taskToDelete[0]);
+    await infoUseTaskStore.deleteTaskStore(id);
+    infoUseTaskStore.fetchTasks();
+    
+};
+
+async function toggleTask(id, completed){
+     await infoUseTaskStore.toggleTask(id, completed);
+     infoUseTaskStore.fetchTasks(); 
+}
 
 </script>
 

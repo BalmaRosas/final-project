@@ -27,5 +27,44 @@ export const useTaskStore = defineStore("tasks", {
         },
       ]);
     },
+
+    async deleteTaskStore(id) {
+      //va a supabase para acceder a la información
+      const {data, error} = await supabase
+      // de la tabla "tasks"
+      .from("tasks")
+      //bórralo todo (lo que coincida con la siguiente línea)
+      .delete()
+      //lo que tenga el mismo id(1º) en la base de datos que el id(2º) que le pasamos con el emit
+      .match({
+        id: id
+      });
+    },
+
+    async editTask(title, id) {
+      //va a supabase para acceder a la información
+      const {data, error} = await supabase
+       // de la tabla "tasks"
+      .from("tasks")
+      //actualiza el título(1r ttile) por el nuevo título(2ºtitle) 
+      .update({title: title})
+      //del objeto que tenga el mismo id(1º) en la base de datos que el id(2º) que le pasamos con el emit
+      .match({
+        id: id
+      });
+    },
+
+    async toggleTask(id, completed) {
+      console.log("estem a toggleTask");
+      const {data, error} = await supabase
+      .from("tasks")
+      //actualiza is-complete(1º) de la base de datos, por el valor opuesto del is-complet(2º) 
+      .update({is_complete: completed})
+      .match({
+        id: id
+      });
+
+      console.log(data);
+    },
   },
-});
+});   

@@ -1,7 +1,13 @@
 <template>
   <nav>
-    <h2>Hola {{ name[0] }}</h2> 
-     <button @click="signOut">Log Out</button>
+    <div class="logo-name">
+      <img src="/images/logo.png" alt="Remind! logo" id="logo">
+      <h2>Remind!</h2>
+    </div>
+    <div class="right-container">
+     <p>Hey {{ name[0] }}!</p> 
+     <button @click="signOut" id="logout-button">Log Out</button>
+    </div>
   </nav>
 </template>
 
@@ -41,4 +47,38 @@ const signOut = async () => {
 }
 </script>
 
-<style></style>
+<style>
+
+nav {
+  background-color: #fdfaf5;
+  display: flex;
+  justify-content:space-between;
+  padding: 6rem -1rem;
+}
+
+.logo-name {
+  display: flex;
+  flex-direction: row;
+  align-items:flex-start;
+  
+}
+
+.right-container {
+  display: flex;
+
+}
+
+#logout-button {
+  background-color: #9fae87;
+  color: white;
+  border: 0px;
+  /* border-radius: 7%; */
+  height: 3rem;
+  width: 6rem;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 1rem; 
+}
+
+</style>

@@ -8,6 +8,7 @@ export const useUserStore = defineStore("user", {
     async fetchUser() {
       const user = await supabase.auth.user();
       this.user = user;
+      return user;
     },
     async signUp(email, password) {
       const { user, error } = await supabase.auth.signUp({
@@ -24,20 +25,29 @@ export const useUserStore = defineStore("user", {
       const { error } = await supabase.auth.signOut();
      if (error) throw error;
     },
-
     async signIn(email, password) {
-      const { user, error } = await supabase.auth.signUp({
+      const { user, error } = await supabase.auth.signIn({
         email: email,
         password: password,
-      },
-      {
-        shouldCreateUser: false
       });
       if (error) throw error;
       if (user) {
         this.user = user;
-        console.log(this.user);
+        // console.log(this.user);
       }
+    // async signIn(email, password) {
+    //   const { user, error } = await supabase.auth.signUp({
+    //     email: email,
+    //     password: password,
+    //   },
+    //   {
+    //     // shouldCreateUser: false
+    //   });
+    //   if (error) throw error;
+    //   if (user) {
+    //     this.user = user;
+    //     console.log(this.user);
+    //   }
     },
   },
   // this keeps the user logged in 
@@ -47,7 +57,10 @@ export const useUserStore = defineStore("user", {
       {
         key: 'user',
         storage: localStorage
-      }
-    ]
+      },
+    ],
   },
+  // persist: {
+  //   storage: localStorage
+  // }
 });

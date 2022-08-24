@@ -10,10 +10,10 @@
     <form @submit.prevent="signIn">
       <!-- <div class="input-line"> -->
         <i class="material-icons">email</i>
-        <input type="text" placeholder="write your e-mail" v-model="email" required class="input-field" >
+        <input type="email" placeholder="write your e-mail" v-model="email" required class="input-field" >
       <!-- </div>  -->
       <input type="password" placeholder="write your password" v-model="password" required class="input-field">
-      <input value="Log in" type="submit" class="submit-button">
+      <button type="submit" class="submit-button">Log in</button>
     </form>
     <div class="bassline-container">
       <span>Don't have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
@@ -92,10 +92,6 @@ const signIn = async () => {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-#logo {
-  height: 40px;
-  margin-top: 1rem;
 }
 
 h1 {
