@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="logo-name">
-      <img src="/images/logo.png" alt="Remind! logo" id="logo">
+      
       <h2>Remind!</h2>
     </div>
     <div class="right-container">

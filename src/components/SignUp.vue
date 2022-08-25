@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
    <div class="title-container">
-      <img id="logo" src="/images/logo.png" alt="Remind logo">
+      
       <h1>Sign up in Remind!</h1>
       <h3>The cutest to-do app you will find</h3>
     </div>
