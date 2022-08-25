@@ -10,6 +10,7 @@ module.exports = {
       manelColor: "#10103C",
       ecru: "#fdfaf5",
       olive: "#6c783f",
+      orange: "#dc8721",
       blue: colors.blue,
       red: colors.red,
       indigo: colors.indigo,

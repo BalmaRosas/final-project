@@ -5,13 +5,13 @@
     
     
 
-    <div class=" relative flex items-center justify-between w-full h-16 mx-5">
+    <div class=" relative flex items-center justify-between w-full h-16 mx-10">
       <div class="flex items-center">
         <img class="w-9" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="app logo">
-        <h1 class="orange-text text-2xl font-semibold text-center ml-2">Note App</h1>
+        <h1 class="text-orange text-2xl font-semibold text-center ml-2">Note App</h1>
       </div>
       <div class="flex items-center">
-        <p class="text-sm font-medium mr-5" >Hey {{ name[0] }}!</p>
+        <p class="text-sm font-medium mr-8" >Hey {{ name[0] }}!</p>
         <button @click="signOut" class="bg-olive text-white px-3 py-2 rounded-md text-sm font-medium" >Log out</button>
       </div>
     </div>

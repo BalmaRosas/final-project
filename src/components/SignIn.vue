@@ -8,7 +8,7 @@
       <div class="w-72 flex flex-col items-center">
         <!-- Heading -->
         <img class="w-10" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="app logo">
-        <h1 class="orange-text text-2xl font-semibold text-center mt-2 mb-6">Note App</h1>
+        <h1 class="text-orange text-2xl font-semibold text-center mt-2 mb-6">Note App</h1>
         <h1 class="text-xl font-semibold text-center text-gray-800">Welcome back!</h1>
         <h2 class="text-center text-gray-400 ">The cutest to do app you will find</h2>
 
