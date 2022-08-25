@@ -33,21 +33,7 @@ onMounted(async () => {
 });
 </script>
 
-<style>
+<style >
 
-body {
- /* background-color: rgb(200, 187, 239); */
-  margin: 0px;
-  background-image: url("https://res.cloudinary.com/dtqumztbl/image/upload/v1661349112/ironhack-to-do-app/images/background5_usvix5.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
 
-  
-
-* {
-  font-family: 'Rubik', sans-serif;
-}
 </style>

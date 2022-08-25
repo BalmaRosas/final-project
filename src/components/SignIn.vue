@@ -1,10 +1,12 @@
 <template>
-  
+ 
   <div class="form-container">
     <div class="title-container">
-      
-     
-      <h1>Log In to Remind!</h1>
+      <div class="logo-container">
+        <img id="logo" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="">
+        <h1 class="logo-name">Remind!</h1>
+      </div>
+      <h1 >Log In</h1>
       <h3>The cutest to-do app you will find</h3>
     </div>
     <form @submit.prevent="signIn">
@@ -16,7 +18,7 @@
       <button type="submit" class="submit-button">Log in</button>
     </form>
     <div class="bassline-container">
-      <span>Don't have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
+      <span>Don't have an account? </span><PersonalRouter class="personal-router" :route="route" :buttonText="buttonText" />
       <p v-show="errorMsg">{{ errorMsg }}</p>
       <p>balma.rosas@gmail.com</p>
     </div>
@@ -77,14 +79,21 @@ const signIn = async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 1rem;
-  height: 75vh;
-  border-radius: 3%;
-  position: absolute;
-  top: 10vh;
-  left: 20vw;
-  right: 20vw;
-  bottom: 10vh;
+  padding: 0px;
+  border-radius: 0%;
+  width: 40vw;
+  height: 85vh;
+  
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-name {
+  font-weight: 800;
+  color: #dc8721;
 }
 
 .title-container {
@@ -139,10 +148,10 @@ form {
 }
 
 .submit-button {
-  background-color: #9fae87;
+  background-color: #6c783f;
   color: white;
   border: 0px;
-  /* border-radius: 7%; */
+  border-radius: 7%;
   height: 3rem;
   font-size: 18px;
   cursor: pointer;
