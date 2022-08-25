@@ -47,32 +47,9 @@
     </div>
 
   </div>
-
-  
 </div>
-  <div class="form-container">
-    <div class="title-container">
-      <div class="logo-container">
-        <img id="logo" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="">
-        <h1 class="logo-name">Remind!</h1>
-      </div>
-      <h1 >Log In</h1>
-      <h3>The cutest to-do app you will find</h3>
-    </div>
-    <form @submit.prevent="signIn">
-      <!-- <div class="input-line"> -->
-        <i class="material-icons">email</i>
-        <input type="email" placeholder="write your e-mail" v-model="email" required class="input-field" >
-      <!-- </div>  -->
-      <input type="password" placeholder="write your password" v-model="password" required class="input-field">
-      <button type="submit" class="submit-button">Log in</button>
-    </form>
-    <div class="bassline-container">
-      <span>Don't have an account? </span><PersonalRouter class="personal-router" :route="route" :buttonText="buttonText" />
-      <p v-show="errorMsg">{{ errorMsg }}</p>
-      <p>balma.rosas@gmail.com</p>
-    </div>
-  </div>
+
+
 </template>
 
 <script setup>
