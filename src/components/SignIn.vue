@@ -1,5 +1,55 @@
 <template>
- 
+<div class="form-container flex flex-wrap min-h-screen w-full content-center justify-center py-10">
+  
+  <!-- Login component -->
+  <div class="flex shadow-md">
+    <!-- Login form -->
+    <div class="ecrue-ground flex flex-wrap content-center justify-center rounded-l-md" style="width: 24rem; height: 32rem;">
+      <div class="w-72 flex flex-col items-center">
+        <!-- Heading -->
+        <img class="w-10" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="app logo">
+        <h1 class="orange-text text-2xl font-semibold text-center mt-2 mb-6">Note App</h1>
+        <h1 class="text-xl font-semibold text-center text-gray-800">Welcome back!</h1>
+        <h2 class="text-center text-gray-400 ">The cutest to do app you will find</h2>
+
+        <!-- Form -->
+        <form @submit.prevent="signIn" class="mt-4">
+          <div class="mb-3">
+            <label class="mb-2 block text-xs font-semibold text-gray-800">Email</label>
+            <input type="email" placeholder="Enter your email" class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500" 
+            v-model="email" required/>
+          </div>
+
+          <div class="mb-3">
+            <label class="mb-2 block text-xs font-semibold text-gray-800">Password</label>
+            <input type="password" placeholder="*****" class=" block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500" 
+            v-model="password" required/>
+          </div>
+
+          <div class="mb-3">
+            <p class="text-center text-amber-600 text-xs font-semibold" v-show="errorMsg">{{ errorMsg }}</p>
+            <button class="green-button mb-1.5 block w-full text-center text-white bg-purple-700 px-2 py-1.5 rounded-md">Sign in</button>
+            
+          </div>
+        </form>
+
+        <!-- Footer -->
+        <div class="text-center">
+          <span class="text-xs text-gray-400 font-semibold">Don't have an account? </span><PersonalRouter class=" green-text text-xs font-semibold text-purple-700" :route="route" :buttonText="buttonText" />
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Login banner -->
+    <div class="flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 32rem;">
+      <img class="w-full h-full bg-center bg-no-repeat bg-contain rounded-r-md" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661440324/ironhack-to-do-app/images/jess-bailey-FHCVK6Vyvwc-unsplash_dayh65.jpg">
+    </div>
+
+  </div>
+
+  
+</div>
   <div class="form-container">
     <div class="title-container">
       <div class="logo-container">
@@ -74,99 +124,6 @@ const signIn = async () => {
 
 <style>
 
-.form-container {
-  background-color: #fdfaf5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  border-radius: 0%;
-  width: 40vw;
-  height: 85vh;
-  
-}
 
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-name {
-  font-weight: 800;
-  color: #dc8721;
-}
-
-.title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: rgb(44, 44, 44);
-}
-
-h3 {
-  margin-top: 0px;
-  font-weight: 500;
-  color: rgb(98, 98, 98);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 37vh;
-  width: 100%;
-  max-width: 350px;
-}
-
-/* .input-line {
-  display: flex;
-  flex-direction: row;
-} */
-
-.material-icons {
-  color: rgb(98, 98, 98);
-  
-}
-
-.input-field {
-  /* border: 0px; */
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-color: rgb(98, 98, 98);
-  background-color: #fdfaf5;
-  font-size: 16px;
-  font-weight: 400;
-
-}
-
-.submit-button {
-  background-color: #6c783f;
-  color: white;
-  border: 0px;
-  border-radius: 7%;
-  height: 3rem;
-  font-size: 18px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 21px;
-}
-
-.bassline-container {
- text-align: center;
- margin-top: 1rem;
-}
-
-span {
-  color: rgb(44, 44, 44);
-  
-}
 
 </style>
