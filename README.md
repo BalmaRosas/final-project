@@ -76,7 +76,11 @@ npm run build
 
 > delete tasks
 
-### DAY 6 - August 23
+### DAY 6 - August 24
 > edit tasks
 
 > mark tasks as completed (toggle)
+
+### DAY 6 - August 24
+> edit tasks
+

@@ -3,7 +3,7 @@
     <h2>{{ task2.title }}</h2>
     <p>{{ task2.description }}</p>
     <button @click="emit('deleteTask', task2.id);" class="task-button delete">Delete</button>
-    <button @click="emit('editFormValue');" class="task-button edit">Edit</button>
+    <button @click="editFormValue" class="task-button edit">Edit</button>
     <button @click="toggleTask" 
     class="task-button" :class="task2.is_complete ? 'done' : 'not-done'"
     >Done</button>
@@ -16,7 +16,8 @@
      <input type="text" 
     placeholder="write your new description"
     v-model="newDescription">
-    <button @click="emit('editTask', task2.id, task2.title, task2.description)" class="task-button edit">Confirm</button>
+    <button @click="editTask(newTitle, newDescription, task2.id);" 
+    class="task-button edit">Confirm</button>
     
   </div>
   
@@ -24,6 +25,10 @@
 
 <script setup>
 import { ref } from "@vue/reactivity";
+import { useTaskStore } from "../stores/task";
+
+
+const infoUseTaskStore = useTaskStore();
 //import func from "../../vue-temp/vue-editor-bridge";
 
 const emit = defineEmits(["deleteTask", "toggleTask", "editTask", "editFormValue"]);
@@ -38,13 +43,21 @@ const toggleTask = () => {
 }
 
 // constante que define el valor por defecto del div
-const editForm = ref(false);
+
 const newTitle = ref("");
 const newDescription = ref("");
 
-// const editFormValue = () => {
-//   editForm.value = !editForm.value;}
+const editForm = ref(false);
 
+const editFormValue = () => {
+  editForm.value = !editForm.value;};
+
+async function editTask(newTitle, newDescription, id) {
+    await infoUseTaskStore.editTask(newTitle, newDescription, id);
+    console.log(newTitle, newDescription, id)
+    infoUseTaskStore.fetchTasks(); 
+    editFormValue();
+};
 
 
 </script>

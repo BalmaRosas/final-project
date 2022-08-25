@@ -9,7 +9,10 @@
 :task2="task1"
 @deleteTask="deleteTask"
 @toggleTask="toggleTask"
-@editTask="editTask"/>
+
+/>
+
+<!-- @editFormValue="editFormValue" -->
 </div>
 
 </template>
@@ -19,6 +22,7 @@ import Nav from '../components/Nav.vue';
 import NewTask from '../components/NewTask.vue';
 import TaskItem from '../components/TaskItem.vue';
 import { useTaskStore } from "../stores/task";
+
 
 const infoUseTaskStore = useTaskStore();
 
@@ -43,14 +47,14 @@ async function toggleTask(id, completed){
 };
 
 
-const editFormValue = () => {
-  editForm.value = !editForm.value;};
 
-async function editTask(newTitle, newDescription, id) {
-    await infoUseTaskStore.editTask(id, newTitle, newDescription);
-    infoUseTaskStore.fetchTasks(); 
-    editFormValue();
-};
+// const editFormValue = () => {
+//     console.log(editForm)
+//     editForm.value = !editForm.value;
+//     console.log("estamos en edit value")
+//     };
+  
+
 
 
 
