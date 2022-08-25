@@ -4,15 +4,16 @@
 <Nav />
 
 <NewTask @addingTask="addingTaskHome"/>
-<!-- <AllTasks/> -->
-<TaskItem v-for="(task1, index) in infoUseTaskStore.tasks" :key="index" 
-:task2="task1"
-@deleteTask="deleteTask"
-@toggleTask="toggleTask"
 
-/>
+<div class="flex flex-row justify-between flex-wrap gap-y-8 gap-x-4 mx-10">
+    <TaskItem  v-for="(task1, index) in infoUseTaskStore.tasks" :key="index" 
+    :task2="task1"
+    @deleteTask="deleteTask"
+    @toggleTask="toggleTask"
+    />
+</div>
 
-<!-- @editFormValue="editFormValue" -->
+<Footer/>
 </div>
 
 </template>
@@ -21,6 +22,7 @@
 import Nav from '../components/Nav.vue';
 import NewTask from '../components/NewTask.vue';
 import TaskItem from '../components/TaskItem.vue';
+import Footer from '../components/Footer.vue';
 import { useTaskStore } from "../stores/task";
 
 

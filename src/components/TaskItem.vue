@@ -1,23 +1,27 @@
 <template>
-  <div v-if="editForm == false" class="card-container">
-    <h2>{{ task2.title }}</h2>
-    <p>{{ task2.description }}</p>
-    <button @click="emit('deleteTask', task2.id);" class="task-button delete">Delete</button>
-    <button @click="editFormValue" class="task-button edit">Edit</button>
-    <button @click="toggleTask" 
-    class="task-button" :class="task2.is_complete ? 'done' : 'not-done'"
-    >Done</button>
+  <div class="bg-ecru rounded shadow-md flex flex-col items-center px-4 py-10" v-if="editForm == false">
+    <h2 class="text-xl font-semibold text-center text-gray-800">{{ task2.title }}</h2>
+    <p class="text-center text-gray-600">{{ task2.description }}</p>
+    <div class="flex">
+      <button class="rounded bg-softred text-white px-2 py-1 rounded-md text-sm font-medium m-1" @click="emit('deleteTask', task2.id);">Delete</button>
+      <button class="rounded bg-orange text-white px-2 py-1 rounded-md text-sm font-medium m-1" @click="editFormValue" >Edit</button>
+      <button class="rounded text-white px-2 py-1 rounded-md text-sm font-medium m-1" @click="toggleTask" 
+      :class="task2.is_complete ? 'done' : 'not-done'"
+      >Done</button>
+    </div>
   </div>
 
-  <div v-if="editForm == true" class="card-container">
+  <div v-if="editForm == true" class="bg-ecru rounded shadow-md flex flex-col items-center mx-10 px-4 py-7">
     <input type="text" 
     placeholder="write your new title"
-    v-model="newTitle">
+    v-model="newTitle"
+    class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500 mb-3">
      <input type="text" 
     placeholder="write your new description"
-    v-model="newDescription">
+    v-model="newDescription"
+    class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500 mb-3">
     <button @click="editTask(newTitle, newDescription, task2.id);" 
-    class="task-button edit">Confirm</button>
+    class="bg-olive rounded text-white px-2 py-1 rounded-md text-sm font-medium m-1">Confirm</button>
     
   </div>
   
@@ -63,34 +67,34 @@ async function editTask(newTitle, newDescription, id) {
 </script>
 
 <style>
-.card-container {
+/* .card-container {
   background-color: #fdfaf5;
   height: 150px;
   width: 150px;
   padding: 3rem;
   margin: 2rem;
-}
+} */
 
-.task-button {
+/* .task-button {
   color: white;
   border: 0px;
   /* border-radius: 7%; */
-  cursor: pointer;
+  /* cursor: pointer;
   font-weight: 400;
   font-size: 17px;
-}
+} */ 
 
 .not-done {
-  background-color: #9fae87;
+  background-color: #6c783f;
 }
 
 .done {
   background-color: #7aafda;
 }
 
-.delete {
+/* .delete {
   background-color: #e37771;
-}
+} */
 
 .edit {
   background-color: #ebc868;

@@ -1,6 +1,6 @@
 <template>
 
-<nav class="ecru shadow-md">
+<nav class="bg-ecru shadow-md">
   <!-- <div class="bg-black max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"> -->
     
     

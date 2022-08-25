@@ -1,8 +1,6 @@
 <template>
-<div class="ecrue-ground rounded shadow-md w-100 mx-10 my-10 px-80 py-10">
-  <!-- px-20 py-20  -->
-     <!-- <div class="flex flex-col items-center"> -->
-
+<div class="bg-ecru rounded shadow-md w-100 mx-10 my-10 px-80 py-10">
+  
         <h1 class="text-3xl font-semibold text-center text-gray-800">Add a task</h1>
         <h2 class="text-xl text-center text-gray-400 mt-2 mb-10">Keep your notes and ideas organized</h2>
 
@@ -23,58 +21,9 @@
             <p class="text-center text-orange text-xs font-semibold" v-show="errorMsg">{{ errorMsg }}</p>
             <button @click="addTask" class="green-button mt-10 block w-full text-center text-white bg-purple-700 px-2 py-1.5 rounded-md">Add task</button>
           </div>
-      <!-- </div> -->
 </div>
 
-<div class="flex flex-wrap min-h-screen w-full content-center justify-center py-10 shadow-md ">
-  
-  <!-- Login component -->
-  <!-- <div class="flex shadow-md"> -->
-    <!-- Login form -->
-    <div class="ecrue-ground flex flex-wrap content-center justify-center rounded">
-      <div class="flex flex-col items-center">
-        <!-- Heading -->
-       
-        <h1 class="text-2xl font-semibold text-center text-gray-800">Add a task</h1>
-        <h2 class="text-center text-gray-400 ">Keep your notes and ideas organized</h2>
 
-        <!-- Form -->
-        
-          <div class="mb-3 mt-4">
-            <label class="mb-2 block text-s font-semibold text-gray-800">Title</label>
-            <input type="text" placeholder="Write a title" class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500" 
-            v-model="taskTitle" required/>
-          </div>
-
-          <div class="mb-3 mt-4">
-            <label class="mb-2 block text-s font-semibold text-gray-800">Description</label>
-            <input type="text" placeholder="Write a description" class=" block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500" 
-            v-model="taskDescription"/>
-          </div>
-
-          <div class="mb-3 mt-4">
-            <p class="text-center text-amber-600 text-xs font-semibold" v-show="errorMsg">{{ errorMsg }}</p>
-            <button class="green-button mb-1.5 block w-full text-center text-white bg-purple-700 px-2 py-1.5 rounded-md">Sign up</button>
-          </div>
-        
-        </div>
-      </div>
-    <!-- </div> -->
-  </div>
-
-
-
-  <div class="add-task">
-    <h1>Add a new task</h1>
-    <h3>Keep your life organized, prepare for a trip ? Start here</h3>
-    <p v-if="showError">{{ errorMsg }}</p>
-    <!-- <form @submit.prevent="addTask"> -->
-      <input type="text" placeholder="write a title" v-model="taskTitle" class="input-field">
-      <input type="text" placeholder="write a description" v-model="taskDescription" class="input-field">
-      <!-- <button type="submit" class="submit-button">Create task</button> -->
-      <button @click="addTask" class="submit-button">Create task</button>
-    <!-- </form> -->
-  </div>
 </template>
 
 

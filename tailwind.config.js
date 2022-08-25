@@ -11,6 +11,8 @@ module.exports = {
       ecru: "#fdfaf5",
       olive: "#6c783f",
       orange: "#dc8721",
+      softred: "#e37771",
+      medpink: "#e8b1a8",
       blue: colors.blue,
       red: colors.red,
       indigo: colors.indigo,

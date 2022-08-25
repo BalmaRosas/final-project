@@ -4,7 +4,7 @@
   <!-- Login component -->
   <div class="flex shadow-md">
     <!-- Login form -->
-    <div class="ecrue-ground flex flex-wrap content-center justify-center rounded-l-md" style="width: 24rem; height: 32rem;">
+    <div class="bg-ecru flex flex-wrap content-center justify-center rounded-l-md" style="width: 24rem; height: 32rem;">
       <div class="w-72 flex flex-col items-center">
         <!-- Heading -->
         <img class="w-10" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="app logo">
@@ -28,7 +28,7 @@
 
           <div class="mb-3">
             <p class="text-center text-amber-600 text-xs font-semibold" v-show="errorMsg">{{ errorMsg }}</p>
-            <button class="green-button mb-1.5 block w-full text-center text-white bg-purple-700 px-2 py-1.5 rounded-md">Sign in</button>
+            <button class="bg-olive mb-1.5 block w-full text-center text-white px-2 py-1.5 rounded-md">Sign in</button>
             
           </div>
         </form>

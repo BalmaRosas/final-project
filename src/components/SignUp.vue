@@ -4,7 +4,7 @@
   <!-- Login component -->
   <div class="flex shadow-md">
     <!-- Login form -->
-    <div class="ecrue-ground flex flex-wrap content-center justify-center rounded-l-md" style="width: 24rem; height: 32rem;">
+    <div class="bg-ecru flex flex-wrap content-center justify-center rounded-l-md" style="width: 24rem; height: 32rem;">
       <div class="w-72 flex flex-col items-center">
         <!-- Heading -->
         <img class="w-10" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="app logo">
@@ -34,7 +34,7 @@
 
           <div class="mb-3">
             <p class="text-center text-amber-600 text-xs font-semibold" v-show="errorMsg">{{ errorMsg }}</p>
-            <button class="green-button mb-1.5 block w-full text-center text-white bg-purple-700 px-2 py-1.5 rounded-md">Sign up</button>
+            <button class="bg-olive mb-1.5 block w-full text-center text-white px-2 py-1.5 rounded-md">Sign up</button>
             
           </div>
         </form>
@@ -55,25 +55,6 @@
   </div>
 </div>
 
-
-
-  <div class="form-container">
-   <div class="title-container">
-      
-      <h1>Sign up in Remind!</h1>
-      <h3>The cutest to-do app you will find</h3>
-    </div>
-    <form @submit.prevent="SignUp">
-      <input type="email" placeholder="write your e-mail" v-model="email" required class="input-field">
-      <input type="password" placeholder="pick a password" v-model="password" required class="input-field">
-      <input type="password" placeholder="confirm your password" v-model="confirmPassword" required class="input-field">
-      <button type="submit" class="submit-button">Create account</button>
-    </form>
-    <div class="bassline-container">
-      <span>Already have an account? </span><PersonalRouter :route="route" :buttonText="buttonText" />
-      <p v-show="errorMsg">{{ errorMsg }}</p>
-    </div>
-  </div>
 </template>
 
 <script setup>
