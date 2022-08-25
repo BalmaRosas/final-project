@@ -9,6 +9,7 @@ module.exports = {
     colors: {
       manelColor: "#10103C",
       ecru: "#fdfaf5",
+      olive: "#6c783f",
       blue: colors.blue,
       red: colors.red,
       indigo: colors.indigo,
