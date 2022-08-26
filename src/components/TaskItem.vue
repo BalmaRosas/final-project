@@ -1,7 +1,11 @@
 <template>
-  <div class="bg-ecru rounded shadow-md flex flex-col items-center px-4 py-10" v-if="editForm == false">
-    <h2 class="text-xl font-semibold text-center text-gray-800">{{ task2.title }}</h2>
-    <p class="text-center text-gray-600">{{ task2.description }}</p>
+  <div class="bg-ecru rounded shadow-md flex flex-col items-center px-4 py-9" v-if="editForm == false">
+    <div class="h-16">
+      <h2 class="text-xl font-semibold text-center text-gray-800">{{ task2.title }}</h2>
+    </div>
+    <div class="h-32">
+      <p class="text-center text-gray-600">{{ task2.description }}</p>
+    </div>
     <div class="flex">
       <button class="rounded bg-softred text-white px-2 py-1 rounded-md text-sm font-medium m-1" @click="emit('deleteTask', task2.id);">Delete</button>
       <button class="rounded bg-orange text-white px-2 py-1 rounded-md text-sm font-medium m-1" @click="editFormValue" >Edit</button>
@@ -11,17 +15,18 @@
     </div>
   </div>
 
-  <div v-if="editForm == true" class="bg-ecru rounded shadow-md flex flex-col items-center mx-10 px-4 py-7">
+  <div v-if="editForm == true" class="bg-ecru rounded shadow-md flex flex-col items-center px-6 py-6 ">
+    <!-- px-7 py-7 -->
     <input type="text" 
     placeholder="write your new title"
     v-model="newTitle"
-    class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500 mb-3">
+    class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500 mt-3 mb-7">
      <input type="text" 
     placeholder="write your new description"
     v-model="newDescription"
-    class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 py-1 px-1.5 text-gray-500 mb-3">
+    class="block w-full rounded-md border border-gray-300 focus:border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-300 pb-12 px-3 text-gray-500">
     <button @click="editTask(newTitle, newDescription, task2.id);" 
-    class="bg-olive rounded text-white px-2 py-1 rounded-md text-sm font-medium m-1">Confirm</button>
+    class="bg-olive rounded text-white px-2 py-1 rounded-md text-sm font-medium mt-16">Confirm</button>
     
   </div>
   

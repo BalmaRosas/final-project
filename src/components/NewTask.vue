@@ -1,5 +1,6 @@
 <template>
-<div class="bg-ecru rounded shadow-md w-100 mx-10 my-10 px-80 py-10">
+<div class="bg-ecru rounded shadow-md w-100 my-10 mx-12 py-10 px-10 lg:px-60">
+  <!-- mx-10 my-10 px-80 py-10 -->
   
         <h1 class="text-3xl font-semibold text-center text-gray-800">Add a task</h1>
         <h2 class="text-xl text-center text-gray-400 mt-2 mb-10">Keep your notes and ideas organized</h2>
