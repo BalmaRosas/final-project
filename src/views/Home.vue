@@ -5,7 +5,7 @@
 
 <NewTask @addingTask="addingTaskHome"/>
 
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-7 mx-12">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-7 mx-12">
     <!-- flex flex-row justify-between flex-wrap gap-y-8 gap-x-4 mx-10 -->
     <TaskItem  v-for="(task1, index) in infoUseTaskStore.tasks" :key="index" 
     :task2="task1"

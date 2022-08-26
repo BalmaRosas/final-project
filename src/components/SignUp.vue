@@ -4,11 +4,11 @@
   <!-- Login component -->
   <div class="flex shadow-md">
     <!-- Login form -->
-    <div class="bg-ecru flex flex-wrap content-center justify-center rounded-l-md" style="width: 24rem; height: 32rem;">
+    <div class="bg-ecru flex flex-wrap content-center justify-center rounded lg:rounded-l-md" style="width: 24rem; height: 32rem;">
       <div class="w-72 flex flex-col items-center">
         <!-- Heading -->
-        <img class="w-10" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661428448/ironhack-to-do-app/images/orange_logo_kndd1y.png" alt="app logo">
-        <h1 class="text-orange text-2xl font-semibold text-center mt-2 mb-4">Note App</h1>
+        <img class="w-10" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661508123/ironhack-to-do-app/images/olive_logo_lk1urs.png" alt="app logo">
+        <h1 class="text-olive text-2xl font-semibold text-center mt-2 mb-4">Note App</h1>
         <h1 class="text-xl font-semibold text-center text-gray-800">Create an account for free</h1>
         <h2 class="text-center text-gray-400 ">The cutest to do app you will find</h2>
 
@@ -48,8 +48,10 @@
     </div>
 
     <!-- Login banner -->
-    <div class="flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 32rem;">
-      <img class="w-full h-full bg-center bg-no-repeat bg-contain rounded-r-md" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661440324/ironhack-to-do-app/images/jess-bailey-FHCVK6Vyvwc-unsplash_dayh65.jpg">
+    <div class="hidden lg:contents lg:flex lg:flex-wrap lg:content-center lg:justify-center lg:rounded-r-md " >
+      <!-- style="width: 24rem; height: 32rem;" -->
+      <img class=" lg:w-96 rounded-r-md" src="https://res.cloudinary.com/dtqumztbl/image/upload/v1661440324/ironhack-to-do-app/images/jess-bailey-FHCVK6Vyvwc-unsplash_dayh65.jpg">
+      <!-- w-full h-full bg-center bg-no-repeat bg-contain -->
     </div>
 
   </div>
